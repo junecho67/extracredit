@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Credit Problems</title>
+    <script>
+        // Problem 1
+        function problem1() {
+            let result = "Counting down by 2's: ";
+            for (let i = 40; i >= 10; i -= 2) {
+                result += i + " ";
+            }
+            alert(result.trim());
+        }
+
+        // Problem 2
+        function problem2() {
+            let sum = 0;
+            while (sum <= 20) {
+                let userInput = parseInt(prompt("Enter a number: "), 10);
+                if (!isNaN(userInput)) {
+                    sum += userInput;
+                    alert("Current sum: " + sum);
+                } else {
+                    alert("Please enter a valid number.");
+                }
+            }
+        }
+
+        // Problem 3
+        function problem3() {
+            let sum = 0;
+            let numbersArray = [];
+            while (sum <= 20) {
+                let userInput = parseInt(prompt("Enter a number: "), 10);
+                if (!isNaN(userInput)) {
+                    sum += userInput;
+                    numbersArray.push(userInput);
+                    alert("Current sum: " + sum);
+                } else {
+                    alert("Please enter a valid number.");
+                }
+            }
+            alert("Numbers entered: " + numbersArray.join(", "));
+        }
+
+        // Problem 4
+        function problem4() {
+            let songs = {
+                "Hey Jude": "The Beatles",
+                "Night Changes": "One Direction",
+                "Ghost of You": "5 Seconds of Summer",
+                "Work from Home": "Fifth Harmony",
+                "Dynamite": "BTS"
+            };
+
+            let result = "Songs and their artists:\n";
+            for (let song in songs) {
+                result += `"${song}" by ${songs[song]}\n`;
+            }
+            alert(result);
+        }
+
+        // Problem 5
+        function problem5() {
+            let songs = {
+                "Hey Jude": "The Beatles",
+                "Night Changes": "One Direction",
+                "Ghost of You": "5 Seconds of Summer",
+                "Work from Home": "Fifth Harmony",
+                "Dynamite": "BTS"
+            };
+
+            let bandName = prompt("Enter the name of a band:");
+            let result = `Songs by ${bandName}:\n`;
+            let found = false;
+
+            for (let song in songs) {
+                if (songs[song] === bandName) {
+                    result += `"${song}"\n`;
+                    found = true;
+                }
+            }
+
+            if (found) {
+                alert(result);
+            } else {
+                alert(`No songs found for ${bandName}.`);
+            }
+        }
+
+        // Function to call all problems
+        function runProblem(problemNumber) {
+            switch (problemNumber) {
+                case 1:
+                    problem1();
+                    break;
+                case 2:
+                    problem2();
+                    break;
+                case 3:
+                    problem3();
+                    break;
+                case 4:
+                    problem4();
+                    break;
+                case 5:
+                    problem5();
+                    break;
+                default:
+                    alert("Invalid problem number.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Extra Credit Problems</h1>
+    <button onclick="runProblem(1)">Problem 1</button><br>
+    <button onclick="runProblem(2)">Problem 2</button><br>
+    <button onclick="runProblem(3)">Problem 3</button><br>
+    <button onclick="runProblem(4)">Problem 4</button><br>
+    <button onclick="runProblem(5)">Problem 5</button><br>
+</body>
+</html>
